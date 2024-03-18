@@ -10,6 +10,13 @@ namespace Prog224W24_Hongfei
     {
         string _category;
 
+        public Merchandise() { }
+
+        public Merchandise(string name, double price, string category) : base(name, price)
+        {
+            _category = category;
+        }
+
         public string Category { get => _category; set => _category=value; }
 
         public override string GetProductType()

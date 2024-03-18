@@ -25,7 +25,7 @@ namespace Prog224W24_Hongfei
 
         public override string ToString()
         {
-            return $"{_name}, {_price}";
+            return $"{_name} : ${_price}";
         }
 
         public abstract string GetProductType();
