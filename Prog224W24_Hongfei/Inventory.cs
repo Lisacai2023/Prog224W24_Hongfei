@@ -4,17 +4,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Text.Json;
 
 namespace Prog224W24_Hongfei
 {
     public class Inventory : IEnumerable
     {
         List<Product> _products = new List<Product>();
-
-        //public Inventory(List<Product> products)
-        //{
-        //    Products= new List<Product>();
-        //}
 
         public List<Product> Products { get => _products; set => _products=value; }
 
@@ -30,13 +26,27 @@ namespace Prog224W24_Hongfei
             _products.Remove(product);
         }
 
-        public void SaveToJson()
+        public void SaveToJson(string filePath)
         {
-
+            JsonSerializerOptions jso = new JsonSerializerOptions()
+            {
+                WriteIndented = true
+            };
+            string json = JsonSerializer.Serialize(Products,jso);
+            File.WriteAllText(filePath, json);
+            Console.WriteLine(json);
         }
 
-        public void LoadFromJson()
+        public void LoadFromJson(string filePath)
         {
+            string listFormFile = File.ReadAllText(filePath);
+            Products = JsonSerializer.Deserialize<List<Product>>(listFormFile);
+
+            Console.WriteLine(Products.Count);
+            foreach (Product product in Products)
+            {
+                Console.WriteLine(product);
+            }
         }
 
         public IEnumerator GetEnumerator()

@@ -7,11 +7,17 @@ namespace Prog224W24_Hongfei
     {
         Inventory inventory = new Inventory();
         Order order = new Order();
-
+        Receipt receipt = new Receipt();
+        static string folderPath = @"../../../JSONFolder/";
+        static string AppJson = @"app.json";
+        string filePath = folderPath + AppJson; 
+          
         public Form1()
         {
             InitializeComponent();
             PreloadInventory();
+            inventory.SaveToJson(filePath);
+            inventory.LoadFromJson(filePath);
 
         }
 
@@ -101,14 +107,16 @@ namespace Prog224W24_Hongfei
             // 1. Saving a reference to the selected product from list 1
             int selectedProductIndex = listBox1.SelectedIndex;
             Product selectedProduct = inventory.Products[selectedProductIndex];
-            
+
             // 2. Adding the product to our current order
             order.AddProduct(selectedProduct);
 
             // 3. Display list of producets in current order
             UpdateOrderListBox();
             double totalPrice = order.CalculateTotalPrice();
-            listBox2.Items.Add($"Total price of the order: {totalPrice}");
+            MessageBox.Show("Product added to the order.");
+
+            listBox2.Items.Add($"Total price of the order: ${totalPrice}");
             DialogResult result = MessageBox.Show($"Do you want to add more products to the order ?", " Edit your order", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
@@ -118,13 +126,15 @@ namespace Prog224W24_Hongfei
             {
                 MessageBox.Show("You clicked No or closed the dialog!");
             }
+            listBox2.Items.Add($"Receipt:\n" +
+                $" Order Total :${totalPrice}");
 
         }
 
         public void UpdateListBox(List<Product> products, ListBox listbox)
         {
             listbox.Items.Clear();
-            foreach(Product product in products)
+            foreach (Product product in products)
             {
                 listbox.Items.Add(product.ToString());
             }
@@ -142,6 +152,9 @@ namespace Prog224W24_Hongfei
             UpdateListBox(order.Products, listBox2);
         }
 
-
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }//main class
 }//namespace
