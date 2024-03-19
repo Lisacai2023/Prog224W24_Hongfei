@@ -12,6 +12,9 @@ namespace Prog224W24_Hongfei
 
         public Merchandise() { }
 
+        public Merchandise(string name, double price) : base(name, price) { }
+
+
         public Merchandise(string name, double price, string category) : base(name, price)
         {
             _category = category;

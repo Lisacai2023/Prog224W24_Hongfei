@@ -95,7 +95,7 @@
             // 
             comboBox1.FormattingEnabled = true;
             comboBox1.Items.AddRange(new object[] { "Beverage", "Food", "Merchandise" });
-            comboBox1.Location = new Point(37, 648);
+            comboBox1.Location = new Point(35, 494);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(459, 49);
             comboBox1.TabIndex = 5;
@@ -103,7 +103,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(37, 545);
+            label3.Location = new Point(35, 391);
             label3.Name = "label3";
             label3.Size = new Size(280, 41);
             label3.TabIndex = 6;
@@ -112,7 +112,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(37, 751);
+            label4.Location = new Point(35, 597);
             label4.Name = "label4";
             label4.Size = new Size(288, 41);
             label4.TabIndex = 7;
@@ -121,7 +121,7 @@
             // checkBox1
             // 
             checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(37, 831);
+            checkBox1.Location = new Point(35, 677);
             checkBox1.Name = "checkBox1";
             checkBox1.Size = new Size(127, 45);
             checkBox1.TabIndex = 8;
@@ -131,7 +131,7 @@
             // checkBox2
             // 
             checkBox2.AutoSize = true;
-            checkBox2.Location = new Point(181, 831);
+            checkBox2.Location = new Point(179, 677);
             checkBox2.Name = "checkBox2";
             checkBox2.Size = new Size(167, 45);
             checkBox2.TabIndex = 9;
@@ -141,7 +141,7 @@
             // checkBox3
             // 
             checkBox3.AutoSize = true;
-            checkBox3.Location = new Point(372, 831);
+            checkBox3.Location = new Point(370, 677);
             checkBox3.Name = "checkBox3";
             checkBox3.Size = new Size(129, 45);
             checkBox3.TabIndex = 10;
@@ -150,7 +150,7 @@
             // 
             // button2
             // 
-            button2.Location = new Point(35, 418);
+            button2.Location = new Point(34, 797);
             button2.Name = "button2";
             button2.Size = new Size(287, 58);
             button2.TabIndex = 11;
@@ -166,6 +166,7 @@
             button3.TabIndex = 12;
             button3.Text = "Ring Up Customer";
             button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // listBox1
             // 
@@ -193,6 +194,7 @@
             button4.TabIndex = 15;
             button4.Text = "Add to Order";
             button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
             // 
             // listBox2
             // 

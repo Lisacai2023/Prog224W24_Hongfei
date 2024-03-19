@@ -10,6 +10,8 @@ namespace Prog224W24_Hongfei
     {
         string _size;
 
+        public Beverage() { }
+
         public Beverage(string name, double price,string size) : base(name, price)
         {
             _size = size;

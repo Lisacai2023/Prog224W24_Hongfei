@@ -12,6 +12,10 @@ namespace Prog224W24_Hongfei
 
         public Food() { }
 
+        public Food(string name, double price) : base(name, price)
+        {
+        }
+
         public Food(string name, double price, DateTime expirationDate) : base(name, price)
         {
             _expirationDate = expirationDate;
