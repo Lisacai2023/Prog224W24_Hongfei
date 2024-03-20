@@ -17,7 +17,7 @@ namespace Prog224W24_Hongfei
             InitializeComponent();
             PreloadInventory();
             inventory.SaveToJson(filePath);
-            inventory.LoadFromJson(filePath);
+            //inventory.LoadFromJson(filePath);
 
         }
 

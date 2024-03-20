@@ -41,7 +41,6 @@ namespace Prog224W24_Hongfei
         {
             string listFormFile = File.ReadAllText(filePath);
             Products = JsonSerializer.Deserialize<List<Product>>(listFormFile);
-
             Console.WriteLine(Products.Count);
             foreach (Product product in Products)
             {
