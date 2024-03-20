@@ -3,6 +3,9 @@ using System.Security.Cryptography.X509Certificates;
 
 namespace Prog224W24_Hongfei
 {
+    //Prog224W24_Hongfei
+    //Final
+    //3/19/2024
     public partial class Form1 : Form
     {
         Inventory inventory = new Inventory();
